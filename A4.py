@@ -11,12 +11,15 @@ housing_data = pd.DataFrame.from_csv('cleaned.csv')
 # Calculate the baseline for linear regression
 
 # Identify the relevant features
-housing_features = housing_data[:, []]
+#housing_features = housing_data[:, []]
 
 #determine strength of correlation for features of interest
-X = pd.DataFrame(df,columns=['OverallQual', 'GarageCars', 'GarageArea', 'YearRemodAdd', 'YearBuilt', 'WoodDeckSF', 'OpenPorchSF', 'Lot Area', 'SalePrice']) 
+X = pd.DataFrame(housing_data,columns=['OverallQual', 'GarageCars', 'GarageArea', 'YearRemodAdd', 'YearBuilt', 'WoodDeckSF', 'OpenPorchSF', 'LotArea', 'SalePrice']) 
 corr = np.corrcoef(X,rowvar=False) #rowvar = False b/c columns are features
-print (corr)
+
+print(len(corr))
+print(corr[8])
+print(corr)
 
 # Create and test model for linear regression for 5 different train_test splits
 
